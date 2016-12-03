@@ -28,7 +28,7 @@ public class MainWindowController {
         databasLabb1.showSearchWindow();
     }
     @FXML
-    private void menuAddBtnClicked(ActionEvent event){
-        
+    private void menuAddBtnClicked(ActionEvent event) throws IOException{
+        databasLabb1.showAddWindow();
     }
 }

@@ -12,7 +12,7 @@
       <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
    </top>
     <center>
-      <FlowPane fx:id="menuAddBtn" hgap="20.0" prefHeight="200.0" prefWidth="200.0" vgap="20.0" BorderPane.alignment="CENTER">
+      <FlowPane hgap="20.0" prefHeight="200.0" prefWidth="200.0" vgap="20.0" BorderPane.alignment="CENTER">
          <children>
           <Button fx:id="menuSearchBtn" mnemonicParsing="false" onAction="#menuSearchBtnClicked" prefHeight="100.0" prefWidth="130.0" text="Search Content" />
           <Button fx:id="menuAddBtn" mnemonicParsing="false" onAction="#menuAddBtnClicked" prefHeight="100.0" prefWidth="130.0" text="Add Content" />
