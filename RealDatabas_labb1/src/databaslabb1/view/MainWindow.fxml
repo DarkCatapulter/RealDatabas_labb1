@@ -23,10 +23,6 @@
       </FlowPane>
    </center>
    <bottom>
-      <HBox alignment="CENTER" prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-         <children>
-            <Button fx:id="homeBtn" mnemonicParsing="false" prefWidth="80.0" text="Home" />
-         </children>
-      </HBox>
+      <HBox alignment="CENTER" prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
    </bottom>
 </BorderPane>

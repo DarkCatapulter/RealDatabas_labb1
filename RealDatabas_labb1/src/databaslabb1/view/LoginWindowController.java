@@ -6,6 +6,7 @@
 package databaslabb1.view;
 
 import databaslabb1.DBConnection;
+import databaslabb1.DatabasLabb1;
 import databaslabb1.DefinedStatements;
 import java.net.URL;
 import java.sql.SQLException;
@@ -22,6 +23,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
 import javafx.stage.Stage;
 
 /**
@@ -30,6 +32,8 @@ import javafx.stage.Stage;
  */
 public class LoginWindowController implements Initializable {
 
+    private DatabasLabb1 databasLabb1;
+    
     @FXML
     private Label label;
     @FXML
@@ -45,7 +49,7 @@ public class LoginWindowController implements Initializable {
             Logger.getLogger(LoginWindowController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+
     @FXML
     private void handleButtonAction(ActionEvent event) {
         try {
@@ -56,6 +60,7 @@ public class LoginWindowController implements Initializable {
                 Parent root = FXMLLoader.load(getClass().getResource("MainWindow.fxml"));
                 Scene scene = new Scene(root);
                 Stage stage = new Stage();
+                stage.setTitle("Labb1 Main Menu");
                 stage.setScene(scene);
                 ((Stage) ((Node) event.getTarget()).getScene().getWindow()).hide();
                 stage.show();

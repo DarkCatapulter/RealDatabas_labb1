@@ -20,6 +20,12 @@ public class Creator {
         this.nation = nation;
         this.addedBy = addedBy;
     }
+    public Creator(String name, String role, String nation, String addedBy) {
+        this.name = name;
+        this.role = role;
+        this.nation = nation;
+        this.addedBy = addedBy;
+    }
     
     public String getName(){
         return name;

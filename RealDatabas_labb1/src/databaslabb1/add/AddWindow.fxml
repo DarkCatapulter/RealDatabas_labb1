@@ -6,7 +6,6 @@
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
@@ -16,7 +15,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="databaslabb1.add.AddWindowController">
    <top>
       <Label text="Add Content" BorderPane.alignment="CENTER">
          <font>
@@ -25,36 +24,37 @@
       </Label>
    </top>
    <bottom>
-      <HBox alignment="CENTER" prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-         <children>
-            <Button mnemonicParsing="false" prefWidth="80.0" text="Home" />
-         </children>
-      </HBox>
+      <HBox alignment="CENTER" prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
    </bottom>
    <center>
       <ScrollPane prefHeight="733.0" prefWidth="605.0" BorderPane.alignment="CENTER">
          <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="373.0" prefWidth="597.0">
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="3000.0" prefWidth="574.0">
                <children>
-                  <GridPane layoutX="7.0" layoutY="-2.0" prefHeight="252.0" prefWidth="591.0">
+                  <Button fx:id="addBtn" layoutX="260.0" layoutY="300.0" mnemonicParsing="false" onAction="#handleAddAction" prefWidth="80.0" text="Add" />
+                  <GridPane fx:id="gridpane" prefHeight="3000.0" prefWidth="585.0">
                     <columnConstraints>
-                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="384.0" minWidth="10.0" prefWidth="172.0" />
-                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="489.0" minWidth="10.0" prefWidth="461.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="489.0" minWidth="10.0" prefWidth="90.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="385.0" minWidth="10.0" prefWidth="135.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="500.0" minWidth="10.0" prefWidth="400.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="489.0" minWidth="10.0" prefWidth="56.0" />
                     </columnConstraints>
                     <rowConstraints>
-                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
                         <Label text="Type of Content:">
                            <opaqueInsets>
                               <Insets left="5.0" />
                            </opaqueInsets>
+                           <GridPane.margin>
+                              <Insets />
+                           </GridPane.margin>
                         </Label>
                         <Label text="Title:" GridPane.rowIndex="1">
                            <opaqueInsets>
@@ -71,37 +71,38 @@
                               <Insets left="5.0" />
                            </opaqueInsets>
                         </Label>
-                        <ChoiceBox prefWidth="150.0" GridPane.columnIndex="1" />
-                        <TextField style="-fx-background-radius: 10;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <TextField style="-fx-background-radius: 10;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                        <Label text="Artist / Director" GridPane.rowIndex="4">
+                        <ChoiceBox fx:id="typeSelector" prefWidth="150.0" GridPane.columnIndex="1" />
+                        <TextField fx:id="titleField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="genreField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Label text="Creator Name:" GridPane.rowIndex="5">
                            <opaqueInsets>
                               <Insets left="5.0" />
                            </opaqueInsets>
                         </Label>
-                        <Button mnemonicParsing="false" text="+" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                        <Button fx:id="genrePlus" mnemonicParsing="false" onAction="#handleGenrePlusAction" text="+" GridPane.columnIndex="2" GridPane.rowIndex="3">
                            <GridPane.margin>
                               <Insets left="6.0" />
                            </GridPane.margin>
                         </Button>
-                        <Button mnemonicParsing="false" text="+" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                        <Button fx:id="creatorPlus" mnemonicParsing="false" onAction="#handleCreatorPlusAction" text="+" GridPane.columnIndex="2" GridPane.rowIndex="4">
                            <GridPane.margin>
                               <Insets left="6.0" />
                            </GridPane.margin>
                         </Button>
-                        <TextField style="-fx-background-radius: 10;" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                        <Button mnemonicParsing="false" prefWidth="80.0" text="Add" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                        <TextField fx:id="creatorField" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <DatePicker fx:id="releaseDateSelector" prefHeight="31.0" prefWidth="422.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label text="Nationality:" GridPane.rowIndex="6">
                            <GridPane.margin>
-                              <Insets left="125.0" />
-                           </GridPane.margin>
-                        </Button>
-                        <DatePicker prefHeight="31.0" prefWidth="422.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <Insets />
+                           </GridPane.margin></Label>
+                        <TextField fx:id="nationalityField" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                        <Label text="Creator Type:" GridPane.rowIndex="4" />
+                        <TextField fx:id="creatorTypeField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                      </children>
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
                   </GridPane>
-                  <Separator prefWidth="600.0" />
                </children>
             </AnchorPane>
          </content>

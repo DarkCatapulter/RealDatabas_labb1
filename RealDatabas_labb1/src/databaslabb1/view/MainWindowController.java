@@ -17,7 +17,7 @@ import javafx.scene.control.Button;
  */
 public class MainWindowController {
     
-    private DatabasLabb1 databasLabb1;
+    private final DatabasLabb1 databasLabb1 = new DatabasLabb1();
     
     @FXML
     private Button menuSearchBtn;
